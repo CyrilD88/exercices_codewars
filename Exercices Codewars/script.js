@@ -10,7 +10,7 @@ multiply = (a, b) => a * b;
 */
 
 // ================================= Créer une fonction pour additionner des données dans un array======================
-// You get an array of numbers, return the sum of all of the positives ones.
+// You get an array of numbers, return the sum of all of the positives ones.    https://www.youtube.com/watch?v=sNZU6YRBKDw    /   https://www.youtube.com/watch?v=HnDgcu6dqOk
 
 // Example [1,-4,7,12] => 1 + 7 + 12 = 20
 
@@ -18,4 +18,10 @@ multiply = (a, b) => a * b;
 
 // function positiveSum(arr) {
 //     return arr.reduce((a,b) => a + (b > 0 ? b : 0),0)
+//   }
+
+// ======================= Créer une fonction pour retourner un un négatif ==============================
+
+// function makeNegative(num) {
+//     return -Math.abs(num);
 //   }
