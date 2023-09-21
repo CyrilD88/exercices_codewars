@@ -25,3 +25,13 @@ multiply = (a, b) => a * b;
 // function makeNegative(num) {
 //     return -Math.abs(num);
 //   }
+
+// function makeNegative(num) {
+//     return num < 0 ? num : -num;
+//   }
+
+// ==================================Créer une fonction pour reverse une String =================
+
+// function solution(str){
+//     return str.split('').reverse().join('');
+//   }
