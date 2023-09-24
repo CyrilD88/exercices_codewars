@@ -35,3 +35,14 @@ multiply = (a, b) => a * b;
 // function solution(str){
 //     return str.split('').reverse().join('');
 //   }
+
+// ==================================Créer une fonction pour convertir un nombre en une String =================
+// function numberToString(num) {
+//     return num.toString();
+//   }
+
+//   best practice:
+//   function numberToString(num) {
+//     // Return a string of the number here!
+//     return String(num);
+//   }
