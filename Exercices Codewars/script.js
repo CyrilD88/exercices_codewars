@@ -61,3 +61,10 @@ multiply = (a, b) => a * b;
 // function repeatStr (n, s) {
 //     return s.repeat(n);
 // }
+
+// ==================================Créer une fonction pour faire le carré d'un nombre + additionner  =================
+// function squareSum(numbers){
+//     return numbers.reduce(function(sum, n){
+//       return (n*n) + sum
+//     },0)
+//     }
