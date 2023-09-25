@@ -56,3 +56,8 @@ multiply = (a, b) => a * b;
 // function opposite(number) {
 //     return(-number);
 //   }
+
+// ==================================Créer une fonction pour répéter une string =================
+// function repeatStr (n, s) {
+//     return s.repeat(n);
+// }
