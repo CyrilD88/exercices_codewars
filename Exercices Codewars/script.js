@@ -46,3 +46,10 @@ multiply = (a, b) => a * b;
 //     // Return a string of the number here!
 //     return String(num);
 //   }
+
+// ==================================Créer une fonction pour convertir un nombre en une String =================
+
+// ==================================Créer une fonction pour enlever la première et dernière lettre =================
+// function removeChar(str){
+//     return str.slice(1, -1)
+//     };
