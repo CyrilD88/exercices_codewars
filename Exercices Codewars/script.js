@@ -361,3 +361,35 @@ multiply = (a, b) => a * b;
 // const tableau = ["12", "111", "4", "56", "42"];
 // const tableau2 = tableau.map(Number).filter(el => el > 20);
 // console.log(tableau2); // [111, 56, 42]
+
+// ==================================d'autres méthodes de programmation fonctionnelle  ===============
+
+// La méthode reduce()
+// La méthode reduce() est utilisée le plus souvent pour réduire une liste à une seule valeur.
+
+// En fait, elle va parcourir chacun des éléments d'un tableau avec une fonction de rappel, et effectuer un calcul avec la valeur de chaque élément et un total intermédiaire, jusqu'à aboutir à un résultat final.
+
+const panier = [
+  {
+    quantity: 1,
+    name: "CHAUSSURES",
+    price: 50,
+  },
+  {
+    quantity: 1,
+    name: "CHEMISES",
+    price: 20,
+  },
+  {
+    quantity: 2,
+    name: "PANTALONS",
+    price: 70,
+  },
+];
+
+const total = panier.reduce(
+  (acc, curr) => (acc += curr.price * curr.quantity),
+  0
+);
+
+console.log(total);
