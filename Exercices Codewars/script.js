@@ -190,3 +190,21 @@ multiply = (a, b) => a * b;
 // tableau2[1].a = 2;
 
 // console.log(tableau); // [[1,2], {a: 1}]
+
+// // ==================================Méthode pour fusionner des tableaux  ===============
+// Fusionner deux tableaux avec la méthode concat()
+// La méthode concat() permet de fusionner plusieurs tableaux en les concaténant, c'est-à-dire en ajoutant les valeurs à la suite.
+// Cette méthode ne modifie pas les tableaux d'origine, elle crée un nouveau tableau et le renvoie :
+
+// const tableau1 = [1, 2, 3];
+// const tableau2 = [4, 5];
+// const tableau3 = tableau1.concat(tableau2);
+// console.log(tableau3); // [1, 2, 3, 4, 5]
+
+// Fusionner deux tableaux avec l'opérateur spread …
+// Nous pouvons également fusionner des tableaux en utilisant l'opérateur
+
+// const tableau1 = [1, 2, 3];
+// const tableau2 = [4, 5];
+// const tableau3 = [...tableau1, ...tableau2];
+// console.log(tableau3); // [1, 2, 3, 4, 5]
