@@ -281,3 +281,83 @@ multiply = (a, b) => a * b;
 
 // C'est la méthode que nous recommandons dès lors que vous n'avez pas besoin d'accéder aux index lors de l'itération.
 // N'utilisez jamais for … in avec un tableau ! Cette instruction sert à énumérer les propriétés d'un objet itérable. Vous aurez donc les index en sortie (0, 1, 2, …) ce qui n'a pas d'intérêt. En outre, dans ce cas, l'ordre des index n'est pas garanti car vous énumérez les propriétés de l'objet, qui rappelez-vous, n'a pas d'ordre garanti !
+
+// ==================================Introduction à la programmation fonctionnelle  ===============
+
+// methode map() et filter()
+// dans l'exemple ci dessous. on applique filter() à item (on peut mettre le nom que l'on veut) pour avoir la quantité. Ensuite on utilise la méthode map().
+// ces deux méthodes utilisent des fonctions de callback . pour le map(item) on passe l'objet dans la fonction de callback car dans l'exemple c'est un objet. Le ...item signifie que l'on prend TOUS les item , le name écrase l'item
+
+// const array = [
+//   {
+//     quantity: 5,
+//     name: "CHAUSSURES",
+//   },
+//   {
+//     quantity: 10,
+//     name: "CHEMISES",
+//   },
+//   {
+//     quantity: 12,
+//     name: "PANTALONS",
+//   },
+// ];
+
+// console.log(array);
+
+// const a = array
+//   .filter((item) => item.quantity >= 10)
+//   .map((item) => ({ ...item, name: item.name.toLowerCase() }));
+
+// console.log(a);
+
+// La fonction map()
+// La méthode map() crée et retourne un nouveau tableau avec les résultats de l'appel d'une fonction de rappel utilisée sur chaque élément du tableau.
+
+// map ne modifie pas le tableau sur lequel elle est utilisée, il s'agit d'une fonction pure.
+// const tableau = [1, 2, 3];
+// const tableau2 = tableau.map(el => el ** el);
+// console.log(tableau2); // [1, 4, 27]
+
+// Nous passons une fonction de rappel qui va être exécutée pour tous les éléments du tableau.
+
+// Ici nous élevons chaque nombre à la puissance du nombre.
+
+// Le premier argument reçu par la fonction de rappel est l'élément en cours d'itération.
+// Le second argument reçu par la fonction de rappel est l'index de l'élément en cours d'itération. Il est facultatif.
+// Le troisième argument reçu par la fonction de rappel est le tableau sur lequel est utilisé la méthode. Il est également facultatif.
+// Il s'agit d'une fonction pure car elle n'a pas d'effet de bord, elle peut en outre être chaînée avec d'autres fonctions pures ce qui favorise grandement la composition fonctionnelle.
+
+// Vous pouvez utiliser également un raccourci syntaxique si la fonction de rappel peut utiliser directement les arguments. Par exemple :
+// const tableau = [1, 2, 3];
+// const tableau2 = tableau.map(Math.pow);
+// console.log(tableau2); // [1, 2, 9]
+
+// Cela équivaut exactement à :
+
+// const tableau = [1, 2, 3];
+// const tableau2 = tableau.map((el, i) => Math.pow(el,i));
+// console.log(tableau2); // [1, 2, 9]
+
+// La fonction filter()
+// La méthode filter() crée et retourne un nouveau tableau contenant les éléments qui passent le test de la fonction de rappel.
+
+// La fonction de rappel reçoit les mêmes arguments que pour celle de map().
+// const tableau = [
+//     { prix: 42 },
+//     { prix: 2 },
+//     { prix: 12 },
+//     { prix: 50 },
+//     { },
+//     { prix: undefined },
+//     { prix: NaN },
+//     { prix: null }
+//   ];
+//   const tableau2 = tableau.filter(el => el.prix > 10);
+//   console.log(tableau2); // [{prix: 42}, {prix: 12}, {prix: 50}]
+
+//   Ce qui est extrêmement courant et puissant est la combinaison de fonctions pures :
+
+// const tableau = ["12", "111", "4", "56", "42"];
+// const tableau2 = tableau.map(Number).filter(el => el > 20);
+// console.log(tableau2); // [111, 56, 42]
