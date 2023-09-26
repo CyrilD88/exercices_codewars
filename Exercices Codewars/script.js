@@ -226,3 +226,58 @@ multiply = (a, b) => a * b;
 // a.sort((c, d) => d - c);
 
 // console.log(a);
+
+// ==================================Méthode pour itérer sur des tableaux  ===============
+// Itérer avec une boucle for
+// Une boucle for donne le plus de possibilités mais est assez verbeuse :
+// const tableau = [1, 2, 3, 4, 5];
+//   for (let i = 0; i < tableau.length; i++) {
+//       console.log(`A l’index ${i} nous avons ${tableau[i]}`);
+//   }
+//   // A l’index 0 nous avons 1
+//   // A l’index 1 nous avons 2
+//   // ….
+
+// Utiliser la méthode forEach()
+// La méthode forEach() permet d'utiliser une fonction de rappel sur chacun des éléments.
+
+// Le premier argument reçu par la fonction passée à forEach() est l'élément en cours d'itération.
+// Le second argument reçu par la fonction passée à forEach() est l'index de l'élément en cours d'itération. Il est facultatif.
+
+// Le troisième argument reçu par la fonction passée à forEach() est le tableau sur lequel est utilisé la méthode. Il est également facultatif.
+
+// Nous pouvons réécrire la boucle précédente en utilisant la méthode, ce qui est beaucoup plus concis et très clair :
+// const tableau = [1, 2, 3, 4, 5];
+//   tableau.forEach((el, i) => console.log(`A l’index ${i} nous avons ${el}`));
+//   // A l’index 0 nous avons 1
+//   // A l’index 1 nous avons 2
+//   // ….
+//   Utilisez cette méthode lorsque vous voulez itérer sur un tableau en ayant accès aux index.
+
+// N'utilisez pas cette méthode pour créer un nouveau tableau à partir d'un tableau
+
+// Itérer sur un tableau avec l'instruction for...of
+// Si vous n'avez pas besoin d'accéder à l'index l'instruction for...of est très concise et efficace pour itérer sur un tableau :
+// const tableau = [1, 2, 3, 4, 5];
+//   for (const valeur of tableau) {
+//     console.log(valeur);
+//   }
+//   // 1
+//   // 2
+//   // ...
+
+//   Cette méthode fonctionne avec tous les itérables, donc avec les chaînes de caractères comme nous l'avons vu :
+//   const chaine = 'dyma';
+
+//   for (const valeur of chaine) {
+//     console.log(valeur);
+//   }
+//   // d
+//   // y
+//   // m
+//   // a
+
+//   Vous pouvez également utiliser les instructions break ou continue.
+
+// C'est la méthode que nous recommandons dès lors que vous n'avez pas besoin d'accéder aux index lors de l'itération.
+// N'utilisez jamais for … in avec un tableau ! Cette instruction sert à énumérer les propriétés d'un objet itérable. Vous aurez donc les index en sortie (0, 1, 2, …) ce qui n'a pas d'intérêt. En outre, dans ce cas, l'ordre des index n'est pas garanti car vous énumérez les propriétés de l'objet, qui rappelez-vous, n'a pas d'ordre garanti !
