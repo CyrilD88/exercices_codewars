@@ -369,27 +369,73 @@ multiply = (a, b) => a * b;
 
 // En fait, elle va parcourir chacun des éléments d'un tableau avec une fonction de rappel, et effectuer un calcul avec la valeur de chaque élément et un total intermédiaire, jusqu'à aboutir à un résultat final.
 
-const panier = [
-  {
-    quantity: 1,
-    name: "CHAUSSURES",
-    price: 50,
-  },
-  {
-    quantity: 1,
-    name: "CHEMISES",
-    price: 20,
-  },
-  {
-    quantity: 2,
-    name: "PANTALONS",
-    price: 70,
-  },
-];
+// const panier = [
+//   {
+//     quantity: 1,
+//     name: "CHAUSSURES",
+//     price: 50,
+//   },
+//   {
+//     quantity: 1,
+//     name: "CHEMISES",
+//     price: 20,
+//   },
+//   {
+//     quantity: 2,
+//     name: "PANTALONS",
+//     price: 70,
+//   },
+// ];
 
-const total = panier.reduce(
-  (acc, curr) => (acc += curr.price * curr.quantity),
-  0
-);
+// const total = panier.reduce(
+//   (acc, curr) => (acc += curr.price * curr.quantity),
+//   0
+// );
 
-console.log(total);
+// console.log(total);
+
+// a méthode reduce() prend deux arguments : une fonction de rappel et une valeur initiale.
+// La fonction de rappel peut utiliser au minimum deux arguments et au maximum quatre.
+// Le premier argument passé à la fonction de rappel est l'accumulateur, c'est-à-dire le résultat intermédiaire. Par convention on utilise souvent acc pour accumulateur.
+// Le second argument passé à la fonction de rappel est l'élément en cours d'itération. Par convention on utilise souvent curr pour current value ou valeur courante.
+// Le troisième argument passé à la fonction de rappel est l'index de l'itération en cours.
+// Le quatrième argument passé à la fonction de rappel est le tableau sur lequel est utilisé reduce().
+// Si aucune valeur initiale n'est passée en deuxième argument de reduce(), le premier élément du tableau est utilisé comme valeur initiale.
+
+// Prenons un second exemple, celui du panier :
+// const tableau = [{prix: 20, quantite: 2}, {prix: 42, quantite: 1}, {prix: 15, quantite: 3}];
+// const total = tableau.reduce((acc, curr) => acc += curr.quantite * curr.prix, 0);
+// console.log(total); // 127
+
+// Nous passons en deuxième argument de reduce() la valeur 0 comme valeur initiale.
+
+// Donc lors de la première exécution, nous avons :
+// acc = 0 + 2 * 20;
+
+// Pour la seconde itération nous avons :
+// acc = 40 + 1 * 42;
+
+// Pour la troisième itération nous avons :
+
+// acc = 82 + 3 * 15;
+
+// Comme il s'agit de la dernière itération, cette valeur est retournée. Nous obtenons le total de 127.
+
+// La méthode flat()
+// La méthode flat() permet de créer et de retourner un nouveau tableau contenant tous les éléments des tableaux imbriqués.
+
+// Comme son nom l'indique, cette méthode permet d'aplatir un tableau.
+// En fait, elle effectue une récursion sur les tableaux imbriqués et les concatène jusqu'au niveau passé en argument.
+
+// Prenons par exemple un tableau avec des éléments imbriqués sur plusieurs niveaux dans des tableaux :
+// const tableau = [1, 2, [3, 4], [[5], [6,7]]];
+// const tableau2 = tableau.flat();
+// const tableau3 = tableau.flat(2);
+
+// console.log(tableau2); // [1, 2, 3, 4, [5], [6, 7]]
+// console.log(tableau3); // [1, 2, 3, 4, 5, 6, 7]
+
+// La méthode flatMap()
+// La méthode flatMap() permet de combiner la méthode map() et la méthode flat(1) de manière optimisée pour la performance.
+// const test = [1, 3, 5].flatMap(el => [el, el + 1]);
+// console.log(test); // [1, 2, 3, 4, 5, 6]
