@@ -47,7 +47,7 @@ multiply = (a, b) => a * b;
 //     return String(num);
 //   }
 
-// ==================================Créer une fonction pour enlever la première et dernière lettre =================
+// ==================================Créer une fonction pour enlever la première et dernière lettre ================= https://www.youtube.com/watch?v=CSTtfCSAabE
 // function removeChar(str){
 //     return str.slice(1, -1)
 //     };
@@ -140,3 +140,53 @@ multiply = (a, b) => a * b;
 // const tableau = [2, 5, 8, 12, 24, 52];
 // const sup = tableau.findIndex(el => el > 10);
 // console.log(sup); // 3
+
+// ==================================Méthode pour copier un tableau  ===============
+
+// de façon "superficielle"
+
+// avec le spread operator
+// const tableau = [1, 2, 3];
+// const tableau2 = [...tableau];
+// tableau2.push(50);
+// console.log(tableau);
+// console.log(tableau2);
+
+// Les deux tableaux n'ont plus la même référence ! Vous avez bien deux tableaux uniques.
+
+// En revanche, comme les objets sont passés par référence, si votre tableau contient des objets (donc des tableaux, fonctions etc), ils conserveront la même référence lors de la copie, et leur modification pourra entraîner des effets indésirables :
+// const tableau = [[1, 2], { a: 1 }];
+// const tableau2 = [...tableau];
+// tableau2[0].push(42);
+// tableau2[1].a = 2;
+// console.log(tableau); // [[1, 2, 42], {a: 2}]
+// console.log(tableau2);
+
+// avec la méthode slice()
+// La méthode slice() renvoie un nouveau tableau, contenant une copie superficielle d'une partie du tableau d'origine.
+// La méthode peut prendre facultativement en premier paramètre un index de début et en second un index de fin exclus.
+
+// const tableau = [1, 2, 3, 4];
+// const tableau2 = tableau.slice();
+// const tableau3 = tableau.slice(1, 2);
+// console.log(tableau);
+// console.log(tableau2); // [1, 2, 3]
+// console.log(tableau3); // [2]
+
+// avec la méthode Array.from()
+// const tableau = [1, 2, 3];
+// const tableau2 = Array.from(tableau);
+// tableau2.push(42);
+// console.log(tableau); // [1, 2, 3]
+
+// copier un tableau en profondeur
+// Pour obtenir une copie profonde d'un tableau qui ne partage aucune référence en commun avec le tableau source il faut utiliser, comme nous l'avons vu pour les objets : JSON.parse(JSON.stringify(objet)).
+
+// Prenons un exemple :
+// const tableau = [[1,2], {a: 1}];
+// const tableau2 = JSON.parse(JSON.stringify(tableau));
+
+// tableau2[0].push(42);
+// tableau2[1].a = 2;
+
+// console.log(tableau); // [[1,2], {a: 1}]
