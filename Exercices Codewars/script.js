@@ -68,3 +68,14 @@ multiply = (a, b) => a * b;
 //       return (n*n) + sum
 //     },0)
 //     }
+
+// ==================================Méthode pour ajouter/supprimer un élément au début d'un tableau  =================
+
+// let arr = [1, 2, 3];
+
+// arr.unshift(-1, 0); //permet d'ajouter un élément à gauche du tableau
+// arr.push(-10, 50); //permet d'ajouter un élément à droit en dernier du tableau
+
+// // arr.splice;(0, 1 ) //permet de supprimer des éléments. Le 0 c'est l'index, le 1 le nombre d'élément à supprimer. Donc ici on part du début du tableau et on supprime un élément
+// arr.splice(1, 0, -1.5); //permet d'ajouter des éléments. Le 1 c'est l'index, le 0 le nombre d'élément à supprimer. Donc ici on part deuxième élément du tableau et on rajouter -1.5
+// console.log(arr);
