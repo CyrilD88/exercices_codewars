@@ -208,3 +208,21 @@ multiply = (a, b) => a * b;
 // const tableau2 = [4, 5];
 // const tableau3 = [...tableau1, ...tableau2];
 // console.log(tableau3); // [1, 2, 3, 4, 5]
+
+// ==================================Méthode pour trier des tableaux  ===============
+
+// localeCompare s'utilise sur les chaines de caractères
+// const a = ["ananas", "banane", "orange", "kiwi", "prune", "pomme"];
+
+// a.sort((c, d) => c.localeCompare(d) * 1);
+
+// console.log(a);
+
+// on peut mettre ce que l'on veut à la place de c et d.
+
+// pour les nombres
+// const a = [1, 4, 6, 10, 50, 3, 25];
+
+// a.sort((c, d) => d - c);
+
+// console.log(a);
