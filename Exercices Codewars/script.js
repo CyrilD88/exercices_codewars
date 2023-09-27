@@ -439,3 +439,5 @@ multiply = (a, b) => a * b;
 // La méthode flatMap() permet de combiner la méthode map() et la méthode flat(1) de manière optimisée pour la performance.
 // const test = [1, 3, 5].flatMap(el => [el, el + 1]);
 // console.log(test); // [1, 2, 3, 4, 5, 6]
+
+// =================================== EXO=========================S
