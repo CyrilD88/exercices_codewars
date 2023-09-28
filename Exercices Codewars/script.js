@@ -440,7 +440,9 @@ multiply = (a, b) => a * b;
 // const test = [1, 3, 5].flatMap(el => [el, el + 1]);
 // console.log(test); // [1, 2, 3, 4, 5, 6]
 
-// =================================== introduction aux modules =========================
+// ***********************************************************************************************************************************************************
+// // ======================================================== introduction aux modules ======================================================================
+// ***********************************************************************************************************************************************************
 // Lorsque notre application devient plus importante, nous voulons séparer notre application en plusieurs fichiers qui sont appelés des modules.
 
 // Jusqu'à ES6, JavaScript n'avait pas de système de modularisation dans le langage.
@@ -449,3 +451,39 @@ multiply = (a, b) => a * b;
 // On pouvait également utiliser des IIFE pour isoler le code de chaque fichier comme nous l'avions vu.
 
 // Aujourd'hui, nous utilisons uniquement du JavaScript pour l'utilisation de modules dans les navigateurs.
+
+// ======================================================== EXPORTER ======================================================================
+// Exporter signifie que vous rendez disponible la fonction ou la variable pour être importée dans un ou plusieurs modules (donc fichiers).
+// Avec les modules JavaScript vous pouvez exporter des fonctions, des variables ou des classes
+// Pour exporter il suffit de placer le mot clé export devant la déclaration :
+
+// export const tableau = [1, 2, 3];
+
+// export function Compter() {}
+
+// export class User {}
+
+// **************************Déclarer un objet d'export
+// Vous pouvez également déclarer un objet contenant les identifiants à exporter :
+// const tableau = [1, 2, 3];
+
+// function Compter() {}
+
+// class User {}
+
+// export { tableau, Compter, User }
+
+// **************************Modifier le nom d'un identifiant pour l'export
+// Vous pouvez renommer les identifiants lors de l'export pour que ce soit ces noms qui soient utilisés dans les modules qui les importeront const tableau = [1, 2, 3];
+
+// function Compter() {}
+
+// class User {}
+
+// export { tableau as tableauNombres, Compter as CompterUsers, User }
+
+// ****************************Export par défaut
+// L'export par défaut permet de déclarer un unique export qui sera utilisé lorsque nous ne précisons pas ce que nous souhaitons importer dans les modules de destination.
+
+// Il suffit d'utiliser export default devant la déclaration.
+// export default function Compter() {}
