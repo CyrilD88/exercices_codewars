@@ -487,3 +487,52 @@ multiply = (a, b) => a * b;
 
 // Il suffit d'utiliser export default devant la déclaration.
 // export default function Compter() {}
+
+// ======================================================== IMPORTER ======================================================================
+
+// *********************************************Importer des identifiants exportés explicitement
+// Pour importer des identifiants qui ont été exportés explicitement, il suffit de faire :
+// import { export1, export2, ... } from "chemin-vers-module";
+
+// Si nous avons par exemple dans un premier module :
+// export const tableau = [1, 2, 3];
+
+// export function Compter() {}
+
+// export class User {}
+
+// Il suffit de faire dans le module qui importe :
+// import { tableau , Compter, User } from "chemin-vers-module";
+
+// Il suffit d'utiliser des accolades puis d'utiliser tous les identifiants que vous souhaitez voir importés. Ensuite il faut utiliser le mot clé from et indiquer le chemin vers le module qui exporte.
+
+// *********************************************Importer l'intégralité d'un module
+// Vous pouvez également utiliser import * as et un identifiant pour importer l'intégralité des exports d'un module :
+
+// import * as monModule from 'chemin-vers-module';
+
+// // Accès aux exports
+// monModule.tableau;
+// monModule.Compter;
+// monModule.User;
+
+// *********************************************Importer en utilisant un alias
+// Comme pour les exports, vous pouvez renommer un identifiant importé lors de l'import, pour utiliser un nom différent dans le module.
+
+// Il suffit d'utiliser as puis le nom du nouvel identifiant pour le module.
+// import { tableau as tableauNombre, Compter, User } from "chemin-vers-module";
+
+// *********************************************Importer l'export par défaut
+// Pour importer ce qui est exporté par défaut et qui n'a donc pas de nom, il suffit d'utiliser un identifiant sans accolade qui contiendra l'export par défaut :
+
+// import unIdentifiant from 'chemin-vers-module';
+
+// // *********************************************Recommandations sur les exports et les imports
+// Nous recommandons de ne jamais utiliser les exports par défaut.
+
+// Nous recommandons également de ne pas utiliser les imports de tout un module avec *.
+
+// Premièrement, parce qu'en faisant de la sorte vous perdez l'autocomplétion automatique de l'IDE.
+// Deuxièmement, parce que vous perdez en consistance dans votre application. Les exports / imports explicites obligent à utiliser toujours les mêmes noms dans votre application ce qui est une bonne chose. Si plusieurs développeurs utilisent des noms différents lors des imports cela devient vite illisible et difficilement maintenable.
+// Troisièmement, car en important explicitement des fichiers, Webpack pourra effectuer des optimisations : notamment du tree-shaking en ne mettant dans le bundle que le code qui est vraiment utilisé. Tout ce qui n'est pas explicitement importé sera écarté
+// Mettons que vous avez une grosse librairie comme lodash et que vous l'importez avec * as lodash. Tout le contenu de la librairie sera mis dans votre bundle et non pas les 2 ou 3 fonctions que vous utiliserez.
