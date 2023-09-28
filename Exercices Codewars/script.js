@@ -652,3 +652,64 @@ multiply = (a, b) => a * b;
 // Cinquièmement, la partie Traversal and Range permet de parcourir dynamiquement le document et de gérer des fragments de document.
 
 // Sixièmement, la partie XPATH permet d'accéder au document en utilisant le langage XPATH.
+
+// ************************************LE DOM HTML **************************************************
+
+// ****************************Le DOM et les noeuds (nodes)
+
+// Comme nous l'avons vu, le DOM permet de passer du HTML à un grand objet document qui est un arbre regroupant tous les éléments déclarés en HTML.
+
+// Autrement dit, lorsque le navigateur reçoit le HTML de la page, il va le parser (c'est-à-dire l'analyser) et le transformer en DOM grâce à des algorithmes.
+
+// Ainsi, les attributs HTML deviennent automatiquement des propriétés des objets du DOM.
+
+// Par exemple :
+// <body id="page"></body>
+
+// Devient un noeud sur l'objet document qui sera un objet body contenant une propriété id contenant la valeur page.
+
+// Il existe plusieurs types de noeuds :
+
+// **************************** Terminologies
+
+// Les enfants sont les descendants directs d'un noeud. On y accède avec les propriétés childNodes, firstChild et lastChild notamment.
+
+// Les descendants sont tous les éléments imbriqués dans un élément (enfants, petits-enfants etc).
+
+// **************************** Accéder aux noeuds voisins
+
+// Depuis n'importe quel noeud du DOM vous pouvez accéder aux noeuds voisins immédiats avec :
+
+// parentNode qui retourne le noeud parent.
+
+// childNodes qui retourne une collection itérable des noeuds enfants directs.
+
+// firstChild qui retourne le premier enfant direct.
+
+// lastChild qui retourne le dernier enfant direct.
+
+// previousSibling qui retourne le noeud frère précédent.
+
+// nextSibling qui retourne le noeud frère suivant.
+
+// ************************  Les objet Elements du DOM
+
+// Tous les éléments HTML deviennent des objets Elements du DOM.
+
+// Il s'agit d'un type de noeud particulier. Ils sont donc un sous-ensemble des noeuds.
+
+// Chaque éléments possèdent de très nombreuses propriétés et notamment des méthodes permettant d'accéder aux éléments parent, enfant et frères dans l'arbre DOM
+
+// Par exemple, les propriétés children, firstElementChild, lastElementChild d'un élément contiendront respectivement : une collection des éléments enfants, le premier élément enfant et le dernier élément enfant.
+
+// Vous pouvez également utiliser pour les éléments de même niveau : previousElementSibling et nextElementSibling.
+
+// Pour l'élément parent, vous pouvez utiliser parentElement.
+
+// **************************** Les objets Attr du DOM
+
+// Tous les attributs HTML deviennent des objets Attr du DOM ils appartiennent toujours à un objet Element du DOM.
+
+// Ainsi chaque élément peut accéder à l'ensemble de ses attributs sur la propriété :
+
+// element.attributes
