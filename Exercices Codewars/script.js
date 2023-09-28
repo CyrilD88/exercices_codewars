@@ -440,4 +440,12 @@ multiply = (a, b) => a * b;
 // const test = [1, 3, 5].flatMap(el => [el, el + 1]);
 // console.log(test); // [1, 2, 3, 4, 5, 6]
 
-// =================================== EXO=========================S
+// =================================== introduction aux modules =========================
+// Lorsque notre application devient plus importante, nous voulons séparer notre application en plusieurs fichiers qui sont appelés des modules.
+
+// Jusqu'à ES6, JavaScript n'avait pas de système de modularisation dans le langage.
+
+// Il fallait donc utiliser les librairies AMD, CommonJS ou UMD.
+// On pouvait également utiliser des IIFE pour isoler le code de chaque fichier comme nous l'avions vu.
+
+// Aujourd'hui, nous utilisons uniquement du JavaScript pour l'utilisation de modules dans les navigateurs.
