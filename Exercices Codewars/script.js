@@ -536,3 +536,49 @@ multiply = (a, b) => a * b;
 // Deuxièmement, parce que vous perdez en consistance dans votre application. Les exports / imports explicites obligent à utiliser toujours les mêmes noms dans votre application ce qui est une bonne chose. Si plusieurs développeurs utilisent des noms différents lors des imports cela devient vite illisible et difficilement maintenable.
 // Troisièmement, car en important explicitement des fichiers, Webpack pourra effectuer des optimisations : notamment du tree-shaking en ne mettant dans le bundle que le code qui est vraiment utilisé. Tout ce qui n'est pas explicitement importé sera écarté
 // Mettons que vous avez une grosse librairie comme lodash et que vous l'importez avec * as lodash. Tout le contenu de la librairie sera mis dans votre bundle et non pas les 2 ou 3 fonctions que vous utiliserez.
+
+// ===============================================================Réexporter et les imports dynamiques==================================================================
+
+// ********************************************Réexporter des modules
+// Il est possible d'importer et d'immédiatement réexporter des identifiants.
+
+// Pour ce faire, il faut utiliser la syntaxe export … from :
+
+// export { monExport } from 'chemin-du-module';
+
+// C'est utile lorsque votre application commence à devenir très importante et que vous avez un grand nombre de modules.
+
+// Mettons que vous avez une fonctionnalité d'authentification dans votre application et que vous ayez quatre ou cinq modules pour l'ensemble du code nécessaire à authentifier vos utilisateurs.
+// Dans ce cas, il est courant de créer un fichier index.js qui va réexporter tous les modules de la fonctionnalité.
+
+// Vous aurez ainsi un fichier index.js qui contiendra :
+
+// // 📁 authentification/index.js
+// export { signup } from 'chemin-module-inscription';
+// export { login, logout } from 'chemin-module-connexion';
+// export { delete } from 'chemin-module-suppression';
+
+// Dans votre application vous pourrez ainsi très simplement importer tous les identifiants nécessaires à la fonctionnalité.
+
+// Par exemple :
+// // 📁 authentification/connexion/formulaire.js
+// import { login } from '/projet/app/src/authentification';
+
+// Par défaut, lorsque vous utilisez un dossier dans le chemin, l'interpréteur va rechercher le fichier index.js dans ce dossier et l'utiliser.
+
+// // ********************************************Les imports dynamiques avec import()
+// Jusqu'à maintenant nous avons vu les imports statiques.
+
+// Les imports dynamiques permettent d'importer des modules sous certaines conditions.
+
+// Ils permettent également de générer dynamiquement les chemins des imports et de passer des paramètres.
+
+// Il est aujourd'hui possible d'utiliser des imports dynamiques en JavaScript, en utilisant la syntaxe suivante :
+
+// import('chemin-module')
+//   .then(obj => console.log(obj))
+//   .catch(err => console.error(err))
+
+// Les imports dynamiques sont assez avancés et nécessitent des connaissances sur la gestion de l'asynchrone et notamment des promesses.
+
+// Nous allons bien sûr tout voir dans des chapitres ultérieurs et verrons des cas d'utilisation des imports dynamiques.
