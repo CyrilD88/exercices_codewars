@@ -29,7 +29,7 @@
 //     return plusGrand;
 //   }
 
-// ************************************Trier un tableau d'objets
+// ************************************Trier un tableau d'objets ************************************************************
 // Énoncé
 // Créez une fonction trierTableau() qui reçoit en argument un tableau d'objets et le retourne trié selon deux clés.
 
@@ -53,4 +53,33 @@
 //     return tableau.sort((a, b) => {
 //       return b.prix - a.prix ? b.prix - a.prix : b.quantite - a.quantite;
 //     });
+//   }
+
+// ********************************************************* MAP et Filter ***************************************************************
+
+// Map et filter
+// Énoncé
+// Créez une fonction filtreFemmesEtAjouteNomComplet() qui reçoit un tableau de personnes célèbres en argument.
+
+// Les objets sont de la forme :
+//   { prenom: 'Albert', nom: 'Einstein', genre: 'masculin' }
+
+// La fonction doit d'abord filtrer les personnes célèbres de genre féminin.
+
+// Elle doit ensuite ajouter à chaque objet du tableau le nom complet à partir du prénom et du nom.
+
+// Liste des objectifs à remplir
+// Créez et exportez une fonction filtreFemmesEtAjouteNomComplet() qui reçoit un tableau en argument
+// Filtrez les objets du tableau pour que seuls les éléments avec une clé genre ayant pour valeur "féminin" soient inclus
+// Ajoutez sur tous les objets du tableau une propriété nomComplet qui comporte le prénom suivi d'un espace puis le nom
+
+// Correction
+
+// export function filtreFemmesEtAjouteNomComplet(tableau) {
+//     return tableau
+//       .filter((el) => el.genre === "féminin")
+//       .map((el) => ({
+//         nomComplet: `${el.prenom} ${el.nom}`,
+//         ...el,
+//       }));
 //   }
