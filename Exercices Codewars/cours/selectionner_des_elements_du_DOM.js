@@ -74,3 +74,5 @@
 // La différence est que les collections live se mettent à jour automatiquement lorsqu'il y a des changements dans le document, alors que les collections statiques non.
 
 // Il faut le savoir, même si dans la grande majorité des cas vous n'aurez besoin que de collections statiques pour effectuer vos manipulations. Nous verrons de nombreux exemples dans le cours.
+
+// pause pour le moment
